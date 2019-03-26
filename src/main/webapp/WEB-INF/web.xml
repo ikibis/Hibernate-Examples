@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<web-app xmlns="http://java.sun.com/xml/ns/j2ee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee
+         http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd"
+         version="2.4">
+
+    <servlet>
+        <servlet-name>ItemServlet</servlet-name>
+        <servlet-class>ru.kibis.itemlist.controller.ItemServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ItemServlet</servlet-name>
+        <url-pattern>/items</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>AddItemServlet</servlet-name>
+        <servlet-class>ru.kibis.itemlist.controller.AddItemServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AddItemServlet</servlet-name>
+        <url-pattern>/add</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>DoneItemServlet</servlet-name>
+        <servlet-class>ru.kibis.itemlist.controller.DoneItemServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>DoneItemServlet</servlet-name>
+        <url-pattern>/done</url-pattern>
+    </servlet-mapping>
+</web-app>
+
