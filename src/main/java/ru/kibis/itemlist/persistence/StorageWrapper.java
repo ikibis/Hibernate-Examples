@@ -12,12 +12,12 @@ import java.util.function.Function;
 public class StorageWrapper {
     private static final Logger LOGGER = LogManager.getLogger(StorageWrapper.class.getName());
     private static final StorageWrapper INSTANCE = new StorageWrapper();
+    private SessionFactory factory = new Configuration().configure().buildSessionFactory();
 
     public static StorageWrapper getINSTANCE() {
         return INSTANCE;
     }
     public <T> T tx(final Function<Session, T> command) {
-        SessionFactory factory = new Configuration().configure().buildSessionFactory();
         final Session session = factory.openSession();
         final Transaction tx = session.beginTransaction();
         try {

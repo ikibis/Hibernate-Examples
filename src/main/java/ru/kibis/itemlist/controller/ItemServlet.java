@@ -19,9 +19,9 @@ public class ItemServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException {
         ObjectMapper mapper = new ObjectMapper();
-        JSONArray array = new JSONArray();
+        //JSONArray array = new JSONArray();
         List<Item> items = validateService.findItems();
-        for (Item item : items) {
+/*        for (Item item : items) {
             JSONObject json = new JSONObject();
             json.put("id", item.getId());
             json.put("name", item.getName());
@@ -29,8 +29,8 @@ public class ItemServlet extends HttpServlet {
             json.put("created", item.getCreated());
             json.put("status", item.isDone());
             array.add(json);
-        }
-        String jsonInString = mapper.writeValueAsString(array);
+        }*/
+        String jsonInString = mapper.writeValueAsString(items);
         resp.setContentType("text/json");
         PrintWriter writer = new PrintWriter(resp.getOutputStream());
         writer.append(jsonInString);

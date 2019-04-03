@@ -2,6 +2,7 @@ package ru.kibis.itemlist.model;
 
 import java.sql.Timestamp;
 import java.util.List;
+import java.util.Objects;
 
 public class Item {
     private int id;
@@ -57,5 +58,21 @@ public class Item {
 
     public void setDone(boolean done) {
         this.done = done;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Item item = (Item) o;
+        return id == item.id &&
+                name.equals(item.name) &&
+                desc.equals(item.desc) &&
+                created.equals(item.created);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, name, desc, created);
     }
 }

@@ -25,7 +25,7 @@ function fillItems() {
                 var name = items[i].name;
                 var desc = items[i].desc;
                 var created = items[i].created;
-                var status = items[i].status;
+                var status = items[i].done;
                 var checked = '';
                 if (status == true) {
                     if ($('#showAll').is(':checked')) {
